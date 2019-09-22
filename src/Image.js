@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Container = styled.div`
-  flex: 1;
   width: 100%;
+  height: 100%;
   position: relative;
   opacity: 0.5;
   transform: scale(0.7);
@@ -25,14 +25,24 @@ const Id = styled.span`
   font-weight: bold;
   z-index: -1;
   opacity: 0.3;
+  @media all and (max-width: 420px) {
+    top: -6.5rem;
+    left: -4rem;
+  }
 `;
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  min-width: 60rem;
-  min-height: 50rem;
+  width: 60rem;
+  height: 50rem;
   box-shadow: 0 1.5rem 2.5rem rgba(50, 50, 93, 0.2),
     0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  @media all and (max-width: 768px) {
+    width: 40rem;
+    height: 30rem;
+  }
+  @media all and (max-width: 420px) {
+    width: 30rem;
+    height: 20rem;
+  }
 `;
 const Title = styled.h3`
   position: absolute;

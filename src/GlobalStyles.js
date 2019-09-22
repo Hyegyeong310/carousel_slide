@@ -19,6 +19,11 @@ const GlobalStyles = createGlobalStyle`
         width: 100%;
         height: 100%;
     }
+    @media all and (max-width: 420px) {
+        :root {
+            font-size: 8px;
+        }
+      }
 `;
 
 export default GlobalStyles;
