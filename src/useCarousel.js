@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Image from 'Image';
+import Image from './Image';
 
-import leftArrow from 'assets/left-arrow.svg';
-import rightArrow from 'assets/right-arrow.svg';
+import leftArrow from './assets/left-arrow.svg';
+import rightArrow from './assets/right-arrow.svg';
 
 const INITIAL_INDEX = 0;
 
