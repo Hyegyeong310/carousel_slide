@@ -9,6 +9,7 @@ import rightArrow from 'assets/right-arrow.svg';
 const INITIAL_INDEX = 0;
 
 const Container = styled.div`
+  margin: 0 auto;
   width: 100vw;
   height: 100vh;
   padding: 2rem;
@@ -32,7 +33,7 @@ const SlideSection = styled.section`
   max-width: 128rem;
   margin: 0 auto;
   margin-top: 10rem;
-  height: 60rem;
+  height: 100%;
   position: relative;
 `;
 const ImageContainer = styled.div`
@@ -109,17 +110,9 @@ const UseCarousel = ({ initialImages }) => {
   const [images, setImages] = useState(initialImages);
   const [index, setIndex] = useState(INITIAL_INDEX);
 
-  const updateValue = value => {
-    value = parseInt(value);
-    if (isNaN(value)) {
-      return;
-    }
-    setValue(value);
-  };
-
   const onChange = useCallback(e => {
     const { value } = e.target;
-    updateValue(value);
+    setValue(value);
   }, []);
 
   const prevSlide = useCallback(() => {
@@ -135,8 +128,9 @@ const UseCarousel = ({ initialImages }) => {
   }, [index, images]);
 
   const deleteSlide = useCallback(() => {
-    setImages(images.filter(image => image.id !== value));
+    setImages(images.filter(image => image.id !== parseInt(value)));
     setValue('');
+    setIndex(0);
   }, [images, value]);
 
   useEffect(() => {

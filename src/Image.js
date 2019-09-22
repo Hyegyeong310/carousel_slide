@@ -27,8 +27,10 @@ const Id = styled.span`
   opacity: 0.3;
 `;
 const Img = styled.img`
-  width: 60rem;
-  height: 50rem;
+  width: 100%;
+  height: 100%;
+  min-width: 60rem;
+  min-height: 50rem;
   box-shadow: 0 1.5rem 2.5rem rgba(50, 50, 93, 0.2),
     0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
 `;
