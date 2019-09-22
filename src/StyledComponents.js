@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin: 0 auto;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -33,8 +34,8 @@ export const SlideSection = styled.section`
   width: 100%;
   max-width: 128rem;
   margin: 0 auto;
-  margin-top: 10rem;
-  height: 60rem;
+  margin-top: 5rem;
+  height: 50rem;
   position: relative;
   @media all and (max-width: 768px) {
     height: 40rem;

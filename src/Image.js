@@ -32,16 +32,14 @@ const Id = styled.span`
 `;
 const Img = styled.img`
   width: 60rem;
-  height: 50rem;
+  height: auto;
   box-shadow: 0 1.5rem 2.5rem rgba(50, 50, 93, 0.2),
     0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
   @media all and (max-width: 768px) {
     width: 40rem;
-    height: 30rem;
   }
   @media all and (max-width: 420px) {
     width: 30rem;
-    height: 20rem;
   }
 `;
 const Title = styled.h3`
