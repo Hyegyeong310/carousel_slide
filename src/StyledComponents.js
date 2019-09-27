@@ -46,7 +46,8 @@ export const SlideSection = styled.section`
 `;
 export const ImageContainer = styled.div`
   position: relative;
-  max-width: 60rem;
+  height: 90%;
+  max-width: 50rem;
   margin: 0 auto;
   margin-top: 3rem;
   @media all and (max-width: 768px) {
@@ -62,6 +63,19 @@ export const ImageWrapper = styled.div`
   transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transform: ${({ index, images }) =>
     `translateX(-${index * (100 / images.length)}%)`};
+`;
+
+export const ImageTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-weight: 400;
+  position: absolute;
+  bottom: 1rem;
+  padding: 1rem;
+  z-index: 10;
+  letter-spacing: 0.8rem;
 `;
 
 export const Arrows = styled.div`

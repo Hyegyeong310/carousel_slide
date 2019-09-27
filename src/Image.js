@@ -31,7 +31,7 @@ const Id = styled.span`
   }
 `;
 const Img = styled.img`
-  width: 60rem;
+  width: 50rem;
   height: auto;
   box-shadow: 0 1.5rem 2.5rem rgba(50, 50, 93, 0.2),
     0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
@@ -42,24 +42,16 @@ const Img = styled.img`
     width: 30rem;
   }
 `;
-const Title = styled.h3`
-  position: absolute;
-  right: 2rem;
-  bottom: 3rem;
-  font-size: 2rem;
-  color: #fff;
-  border-bottom: 0.2rem solid #fff;
-  padding: 1rem;
-`;
 
 const Image = ({ values, active }) => {
   const { id, imageUrl, title } = values;
   return (
-    <Container className={`img-${id}`} active={active}>
-      <Id>{id < 10 ? `0${id}` : id}</Id>
-      <Img src={imageUrl} alt={title} />
-      <Title>{title}</Title>
-    </Container>
+    <>
+      <Container className={`img-${id}`} active={active}>
+        <Id>{id < 10 ? `0${id}` : id}</Id>
+        <Img src={imageUrl} alt={title} />
+      </Container>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import {
   SlideSection,
   ImageContainer,
   ImageWrapper,
+  ImageTitle,
   Arrows,
   LeftArrow,
   RightArrow,
@@ -73,6 +74,7 @@ const UseCarousel = ({ initialImages }) => {
               <Image values={image} key={idx} active={index === idx} />
             ))}
           </ImageWrapper>
+          <ImageTitle>{images[index].title}</ImageTitle>
         </ImageContainer>
         <Arrows onClick={nextSlide} className="right">
           <RightArrow src={rightArrow} alt="right arrow" />
