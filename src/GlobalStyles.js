@@ -4,9 +4,6 @@ import reset from 'styled-reset';
 const GlobalStyles = createGlobalStyle`
 
     ${reset};
-    :root {
-        font-size: 10px;
-    }
     * {
         box-sizing: border-box;
     }
@@ -20,11 +17,6 @@ const GlobalStyles = createGlobalStyle`
         width: 100%;
         height: 100%;
     }
-    @media all and (max-width: 420px) {
-        :root {
-            font-size: 8px;
-        }
-      }
 `;
 
 export default GlobalStyles;

@@ -19,27 +19,27 @@ const Container = styled.div`
 `;
 const Id = styled.span`
   position: absolute;
-  top: -8rem;
-  left: -5rem;
-  font-size: 10rem;
+  top: -80px;
+  left: -50px;
+  font-size: 100px;
   font-weight: bold;
   z-index: -1;
   opacity: 0.3;
   @media all and (max-width: 420px) {
-    top: -6.5rem;
-    left: -4rem;
+    top: -65px;
+    left: -40px;
   }
 `;
 const Img = styled.img`
-  width: 50rem;
+  width: 500px;
   height: auto;
-  box-shadow: 0 1.5rem 2.5rem rgba(50, 50, 93, 0.2),
-    0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 25px rgba(50, 50, 93, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.2);
   @media all and (max-width: 768px) {
-    width: 40rem;
+    width: 400px;
   }
   @media all and (max-width: 420px) {
-    width: 30rem;
+    width: 300px;
   }
 `;
 

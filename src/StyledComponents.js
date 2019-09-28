@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100%;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,44 +17,44 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   width: 100%;
-  font-size: 2rem;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1;
   font-weight: 500;
   color: #2e293c;
   @media all and (max-width: 420px) {
-    padding: 1rem;
+    padding: 10px;
   }
 `;
 
 export const InputSection = styled.section`
-  margin: 2rem;
+  margin: 20px;
 `;
 export const SlideSection = styled.section`
   width: 100%;
-  max-width: 128rem;
+  max-width: 1280px;
   margin: 0 auto;
-  margin-top: 5rem;
-  height: 50rem;
+  margin-top: 50px;
+  height: 500px;
   position: relative;
   @media all and (max-width: 768px) {
-    height: 40rem;
+    height: 400px;
   }
   @media all and (max-width: 420px) {
-    height: 30rem;
+    height: 300px;
   }
 `;
 export const ImageContainer = styled.div`
   position: relative;
   height: 90%;
-  max-width: 50rem;
+  max-width: 500px;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 30px;
   @media all and (max-width: 768px) {
-    max-width: 40rem;
+    max-width: 400px;
   }
   @media all and (max-width: 420px) {
-    max-width: 30rem;
+    max-width: 300px;
   }
 `;
 export const ImageWrapper = styled.div`
@@ -68,28 +68,28 @@ export const ImageWrapper = styled.div`
 export const ImageTitle = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: bold;
   font-weight: 400;
   position: absolute;
-  bottom: 1rem;
-  padding: 1rem;
+  bottom: 10px;
+  padding: 10px;
   z-index: 10;
-  letter-spacing: 0.8rem;
+  letter-spacing: 8px;
 `;
 
 export const Arrows = styled.div`
   z-index: 10;
   position: absolute;
   display: flex;
-  width: 10rem;
+  width: 100px;
   align-items: center;
   justify-content: center;
   bottom: 0;
   top: 0;
   opacity: 0.6;
   cursor: pointer;
-  border-radius: 0.8rem;
+  border-radius: 8px;
   transform: scale(0.7);
   transition: all 0.3s ease-in-out;
   &.left {
@@ -103,10 +103,10 @@ export const Arrows = styled.div`
     transform: scale(1);
   }
   & > img {
-    width: 3rem;
+    width: 30px;
   }
   @media all and (max-width: 420px) {
-    width: 5rem;
+    width: 50px;
   }
 `;
 export const LeftArrow = styled.img``;
@@ -114,23 +114,23 @@ export const RightArrow = styled.img``;
 
 export const Input = styled.input`
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 12px;
   color: #909090;
   outline: none;
-  padding: 1rem;
-  min-width: 20rem;
-  border: solid 0.2rem #e5e5e5;
+  padding: 10px;
+  min-width: 200px;
+  border: solid 2px #e5e5e5;
   border-right: none;
 `;
 
 export const Button = styled.button`
   all: unset;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 10px 20px;
   background-color: #000;
-  font-size: 1.2rem;
+  font-size: 12px;
   cursor: pointer;
-  border: solid 0.2rem #000;
+  border: solid 2px #000;
   transition: all 0.2s ease;
   &:hover {
     opacity: 0.7;
