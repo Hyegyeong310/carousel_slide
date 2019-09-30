@@ -25,9 +25,13 @@ const Id = styled.span`
   font-weight: bold;
   z-index: -1;
   opacity: 0.3;
-  @media all and (max-width: 420px) {
+  @media all and (min-width: 481px) and (max-width: 767px){
     top: -65px;
     left: -40px;
+  }
+  @media all and (min-width:320px) and (max-width: 480px) {
+    font-size: 70px;
+    top: -60px;
   }
 `;
 const Img = styled.img`
@@ -35,11 +39,14 @@ const Img = styled.img`
   height: auto;
   box-shadow: 0 15px 25px rgba(50, 50, 93, 0.2),
     0 5px 15px rgba(0, 0, 0, 0.2);
-  @media all and (max-width: 768px) {
+  @media all and (min-width: 768px) and (max-width: 1024px) {
     width: 400px;
   }
-  @media all and (max-width: 420px) {
+  @media all and (min-width: 481px) and (max-width: 767px) {
     width: 300px;
+  }
+  @media all and (min-width:320px) and (max-width: 480px) {
+    width: 230px;
   }
 `;
 

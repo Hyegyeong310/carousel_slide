@@ -9,7 +9,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media all and (max-width: 420px) {
+  overflow-x: hidden;
+  @media (min-width: 1281px) {
+    max-width: 1281px;
+  }
+  @media all and (min-width: 481px) and (max-width: 767px) {
     padding: 0;
     width: 100%;
   }
@@ -22,7 +26,7 @@ export const Title = styled.h1`
   letter-spacing: 1;
   font-weight: 500;
   color: #2e293c;
-  @media all and (max-width: 420px) {
+  @media all and (min-width: 481px) and (max-width: 767px) {
     padding: 10px;
   }
 `;
@@ -37,11 +41,14 @@ export const SlideSection = styled.section`
   margin-top: 50px;
   height: 500px;
   position: relative;
-  @media all and (max-width: 768px) {
+    @media all and (min-width: 768px) and (max-width: 1024px) {
     height: 400px;
   }
-  @media all and (max-width: 420px) {
+ @media all and (min-width: 481px) and (max-width: 767px) {
     height: 300px;
+  }
+  @media all and (min-width: 320px) and (max-width: 480px) {
+    height: 260px;
   }
 `;
 export const ImageContainer = styled.div`
@@ -50,11 +57,14 @@ export const ImageContainer = styled.div`
   max-width: 500px;
   margin: 0 auto;
   margin-top: 30px;
-  @media all and (max-width: 768px) {
+    @media all and (min-width: 768px) and (max-width: 1024px) {
     max-width: 400px;
   }
-  @media all and (max-width: 420px) {
+  @media all and (min-width: 481px) and (max-width: 767px) {
     max-width: 300px;
+  }
+  @media all and (min-width: 320px) and (max-width: 480px) {
+    max-width: 230px;
   }
 `;
 export const ImageWrapper = styled.div`
@@ -105,9 +115,13 @@ export const Arrows = styled.div`
   & > img {
     width: 30px;
   }
-  @media all and (max-width: 420px) {
+  @media all and (min-width: 481px) and (max-width: 767px) {
     width: 50px;
   }
+  @media all and (min-width: 320px) and (max-width: 480px) {
+    width: 10px;
+  }
+
 `;
 export const LeftArrow = styled.img``;
 export const RightArrow = styled.img``;
@@ -121,6 +135,9 @@ export const Input = styled.input`
   min-width: 200px;
   border: solid 2px #e5e5e5;
   border-right: none;
+  @media all and (min-width: 320px) and (max-width: 480px) {
+    min-width: 150px;
+  }
 `;
 
 export const Button = styled.button`
@@ -136,3 +153,4 @@ export const Button = styled.button`
     opacity: 0.7;
   }
 `;
+
