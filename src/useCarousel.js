@@ -27,10 +27,10 @@ const UseCarousel = ({ initialImages }) => {
   const [images, setImages] = useState(initialImages);
   const [index, setIndex] = useState(INITIAL_INDEX);
 
-  const onChange = useCallback(e => {
+  const onChange = e => {
     const { value } = e.target;
     setValue(value);
-  }, []);
+  }
 
   const prevSlide = useCallback(() => {
     const resetToLastBack = index === 0;
