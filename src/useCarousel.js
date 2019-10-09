@@ -19,47 +19,55 @@ import {
 import leftArrow from 'assets/left-arrow.svg';
 import rightArrow from 'assets/right-arrow.svg';
 
-const INITIAL_INDEX = 0;
+const INITIAL_INDEX = 1;
 const INTERVAL_TIME = 5000;
 
 const UseCarousel = ({ initialImages }) => {
   const [value, setValue] = useState('');
-  const [images, setImages] = useState(initialImages);
+  const [images, setImages] = useState([
+    initialImages[initialImages.length - 1],
+    ...initialImages,
+    initialImages[0]
+  ]);
   const [index, setIndex] = useState(INITIAL_INDEX);
+  const [imagesLength, setImagesLength] = useState(images.length);
 
   const onChange = e => {
     const { value } = e.target;
     setValue(value);
-  }
+  };
 
   const prevSlide = useCallback(() => {
-    const resetToLastBack = index === 0;
-    const currentIndex = resetToLastBack ? images.length - 1 : index - 1;
-    setIndex(currentIndex);
-  }, [index, images]);
+    if (index > INITIAL_INDEX) {
+      setIndex(index - 1);
+    } else if (index === INITIAL_INDEX) {
+      setIndex(imagesLength - 2);
+    }
+  }, [index, imagesLength]);
 
   const nextSlide = useCallback(() => {
-    const resetIndex = index === images.length - 1;
-    const currentIndex = resetIndex ? 0 : index + 1;
-    setIndex(currentIndex);
-  }, [index, images]);
+    if (index < imagesLength - 1) {
+      setIndex(index + 1);
+    }
+    if (index === imagesLength - 2) {
+      setIndex(1);
+    }
+  }, [index, imagesLength]);
 
   const deleteSlide = useCallback(() => {
-    setImages(images.filter(image => image.id !== parseInt(value)));
+    const newImages = images.filter(image => image.id !== parseInt(value));
+    setImages(newImages);
     setValue('');
     setIndex(INITIAL_INDEX);
+    setImagesLength(newImages.length);
   }, [images, value]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (index !== images.length - 1) {
-        setIndex(index + 1);
-      } else {
-        setIndex(INITIAL_INDEX);
-      }
+      nextSlide();
     }, INTERVAL_TIME);
     return () => clearInterval(interval);
-  }, [index, images]);
+  }, [nextSlide]);
 
   return (
     <Container>
@@ -71,7 +79,12 @@ const UseCarousel = ({ initialImages }) => {
         <ImageContainer>
           <ImageWrapper index={index} images={images}>
             {images.map((image, idx) => (
-              <Image values={image} key={idx} active={index === idx} />
+              <Image
+                values={image}
+                key={idx}
+                active={index === idx}
+                imagesLength={imagesLength}
+              />
             ))}
           </ImageWrapper>
           <ImageTitle>{images[index].title}</ImageTitle>
