@@ -55,12 +55,18 @@ const UseCarousel = ({ initialImages }) => {
   }, [index, imagesLength]);
 
   const deleteSlide = useCallback(() => {
-    const newImages = images.filter(image => image.id !== parseInt(value));
+    const parseValue = parseInt(value);
+    let newImages = images.filter(image => image.id !== parseValue);
+    if (images[parseValue].id === images[0].id) {
+      newImages = [...newImages, newImages[0]];
+    } else if (images[parseValue].id === images[imagesLength - 1].id) {
+      newImages = [newImages[newImages.length - 1], ...newImages];
+    }
     setImages(newImages);
     setValue('');
     setIndex(INITIAL_INDEX);
     setImagesLength(newImages.length);
-  }, [images, value]);
+  }, [images, value, imagesLength]);
 
   useEffect(() => {
     const interval = setInterval(() => {
