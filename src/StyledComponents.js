@@ -41,10 +41,10 @@ export const SlideSection = styled.section`
   margin-top: 50px;
   height: 500px;
   position: relative;
-    @media all and (min-width: 768px) and (max-width: 1024px) {
+  @media all and (min-width: 768px) and (max-width: 1024px) {
     height: 400px;
   }
- @media all and (min-width: 481px) and (max-width: 767px) {
+  @media all and (min-width: 481px) and (max-width: 767px) {
     height: 300px;
   }
   @media all and (min-width: 320px) and (max-width: 480px) {
@@ -57,7 +57,7 @@ export const ImageContainer = styled.div`
   max-width: 500px;
   margin: 0 auto;
   margin-top: 30px;
-    @media all and (min-width: 768px) and (max-width: 1024px) {
+  @media all and (min-width: 768px) and (max-width: 1024px) {
     max-width: 400px;
   }
   @media all and (min-width: 481px) and (max-width: 767px) {
@@ -70,7 +70,10 @@ export const ImageContainer = styled.div`
 export const ImageWrapper = styled.div`
   display: flex;
   position: absolute;
-  transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  /* transition: ${({ index, images }) =>
+    index === images.length - 1 || index === 0
+      ? `0s`
+      : `transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955)`}; */
   transform: ${({ index, images }) =>
     `translateX(-${index * (100 / images.length)}%)`};
 `;
@@ -121,7 +124,6 @@ export const Arrows = styled.div`
   @media all and (min-width: 320px) and (max-width: 480px) {
     width: 10px;
   }
-
 `;
 export const LeftArrow = styled.img``;
 export const RightArrow = styled.img``;
@@ -153,4 +155,3 @@ export const Button = styled.button`
     opacity: 0.7;
   }
 `;
-
