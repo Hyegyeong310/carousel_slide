@@ -7,18 +7,14 @@ const Container = styled.div`
   height: 100%;
   position: relative;
   opacity: 0.5;
-  transform: scale(0.9);
-  transition: ${({ index, imagesLength }) =>
-    index === 0 || index === imagesLength - 1
-      ? `0s`
-      : `opacity 0.3s linear,
-    transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955)`};
+  transform: scale(0.7);
+  /* transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
   ${({ active }) =>
     active &&
     `
         opacity: 1;
-     transform: scale(1); 
-    `}
+        transform: scale(1); 
+        `}
 `;
 const Id = styled.span`
   position: absolute;
@@ -53,15 +49,11 @@ const Item = styled.img`
 `;
 
 const Image = ({ values, active }) => {
-  const { id, imageUrl, title, imagesLength } = values;
+  const { id, imageUrl, title } = values;
+
   return (
     <>
-      <Container
-        className={`img-${id}`}
-        active={active}
-        id={id}
-        imagesLength={imagesLength}
-      >
+      <Container active={active} id={id}>
         <Id>{id < 10 ? `0${id}` : id}</Id>
         <Item src={imageUrl} alt={title} />
       </Container>
