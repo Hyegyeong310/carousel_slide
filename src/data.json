@@ -2,26 +2,26 @@
   {
     "id": 1,
     "title": "사진 1",
-    "imageUrl": "https://picsum.photos/id/1/400/300"
+    "imageUrl": "https://user-images.githubusercontent.com/25483027/66183999-a6989f80-e6b5-11e9-9efa-1cf2ecd3bb36.png"
   },
   {
     "id": 2,
     "title": "사진 2",
-    "imageUrl": "https://picsum.photos/id/2/400/300"
+    "imageUrl": "https://user-images.githubusercontent.com/25483027/66184016-b87a4280-e6b5-11e9-9b22-55ce7279d3c9.png"
   },
   {
     "id": 3,
     "title": "사진 3",
-    "imageUrl": "https://picsum.photos/id/3/400/300"
+    "imageUrl": "https://user-images.githubusercontent.com/25483027/66184032-c8922200-e6b5-11e9-8cf0-f5af5716d9c1.png"
   },
   {
     "id": 4,
     "title": "사진 4",
-    "imageUrl": "https://picsum.photos/id/4/400/300"
+    "imageUrl": "https://user-images.githubusercontent.com/25483027/66184050-d778d480-e6b5-11e9-9f3b-fefcd139b521.png"
   },
   {
     "id": 5,
     "title": "사진 5",
-    "imageUrl": "https://picsum.photos/id/5/400/300"
+    "imageUrl": "https://user-images.githubusercontent.com/25483027/66184072-eb243b00-e6b5-11e9-9861-5c4d12b34835.png"
   }
 ]
