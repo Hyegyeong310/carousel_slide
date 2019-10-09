@@ -70,12 +70,11 @@ export const ImageContainer = styled.div`
 export const ImageWrapper = styled.div`
   display: flex;
   position: absolute;
-  /* transition: ${({ index, images }) =>
-    index === images.length - 1 || index === 0
-      ? `0s`
-      : `transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955)`}; */
-  transform: ${({ index, images }) =>
-    `translateX(-${index * (100 / images.length)}%)`};
+  transition: ${({ transition }) =>
+    `transform ${transition}ms cubic-bezier(0.455, 0.03, 0.515, 0.955)`};
+  transform: ${({ index, images }) => {
+    return `translateX(-${index * (100 / images.length)}%)`;
+  }};
 `;
 
 export const ImageTitle = styled.div`
