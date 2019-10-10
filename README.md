@@ -34,7 +34,7 @@
 
 ## Preview
 
-![image](https://user-images.githubusercontent.com/25483027/66447471-5d679780-ea89-11e9-89a4-70ba042db965.png)
+![image](https://user-images.githubusercontent.com/25483027/66541220-7e9fb500-eb69-11e9-9359-a9063a388ffd.png)
 
 - Try it: https://jovial-fermi-f2ba40.netlify.com
 
