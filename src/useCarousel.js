@@ -23,13 +23,13 @@ const INITIAL_INDEX = 2;
 const INTERVAL_TIME = 5000;
 const SLIDE_SPEED = 300;
 
+const copyFirstLast = arr => {
+  return [...arr.slice(arr.length - 2), ...arr, ...arr.slice(0, 2)];
+};
+
 const UseCarousel = ({ initialImages }) => {
   const [value, setValue] = useState('');
-  const [images, setImages] = useState([
-    ...initialImages.slice(initialImages.length - 2),
-    ...initialImages,
-    ...initialImages.slice(0, 2)
-  ]);
+  const [images, setImages] = useState(copyFirstLast(initialImages));
   const [index, setIndex] = useState(INITIAL_INDEX);
   const [imagesLength, setImagesLength] = useState(images.length);
   const [transition, setTransition] = useState(SLIDE_SPEED);
@@ -69,24 +69,23 @@ const UseCarousel = ({ initialImages }) => {
 
   const deleteSlide = useCallback(() => {
     const parseValue = parseInt(value);
-    let newImages = images.filter(image => image.id !== parseValue);
-    if (
-      images[INITIAL_INDEX].id === parseValue ||
-      images[INITIAL_INDEX + 1].id === parseValue
-    ) {
-      newImages = [...newImages, newImages[INITIAL_INDEX + 1]];
-    } else if (
-      images[LAST_SLIDE_COPY].id === parseValue ||
-      images[LAST_SLIDE_COPY - 1].id === parseValue
-    ) {
-      newImages = [newImages[INITIAL_INDEX + 1], ...newImages];
+    if (imagesLength > 7) {
+      let newImages = images.filter(image => image.id !== parseValue);
+      if (images[0].id === parseValue || images[1].id === parseValue) {
+        newImages = newImages.slice(LAST_SLIDE_COPY, newImages.length - 2);
+      } else if (
+        images[imagesLength - 1].id === parseValue ||
+        images[imagesLength - 2].id === parseValue
+      ) {
+        newImages = newImages.slice(INITIAL_INDEX, newImages.length - 1);
+      }
+      newImages = copyFirstLast(newImages);
+      setImages(newImages);
+      setImagesLength(newImages.length);
     }
-    console.log('newImages: ', newImages);
-    setImages(newImages);
     setValue('');
     setIndex(INITIAL_INDEX);
-    setImagesLength(newImages.length);
-  }, [images, value]);
+  }, [images, value, imagesLength]);
 
   const handleTransitionEnd = index => {
     setTransition(0);
